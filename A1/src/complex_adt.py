@@ -30,8 +30,8 @@ class ComplexT:
         elif self.x == 0 and self.y == 0:
             return None
     
-    def equal(self, ComplexNo):
-        if self.x == ComplexNo.x and self.y == ComplexNo.y:
+    def equal(self, complex_no):
+        if self.x == complex_no.x and self.y == complex_no.y:
             return True
         else:
             return False
@@ -39,26 +39,25 @@ class ComplexT:
     def conj(self):
         return ComplexT(self.x, -1 * self.y)
 
-    def add(self, ComplexNo):
-        return ComplexT(self.x + ComplexNo.x, self.y + ComplexNo.y)
+    def add(self, complex_no):
+        return ComplexT(self.x + complex_no.x, self.y + complex_no.y)
 
-    def sub(self, ComplexNo):
-        return ComplexT(self.x - ComplexNo.x, self.y - ComplexNo.y)
+    def sub(self, complex_no):
+        return ComplexT(self.x - complex_no.x, self.y - complex_no.y)
 
-    def mult(self, ComplexNo):
-        return ComplexT((self.x * ComplexNo.x - self.y * ComplexNo.y), (self.x * ComplexNo.y + self.y * ComplexNo.x)) 
+    def mult(self, complex_no):
+        return ComplexT((self.x * complex_no.x - self.y * complex_no.y), (self.x * complex_no.y + self.y * complex_no.x)) 
 
     def recip(self):
         if self.x == 0 and self.y == 0:
             return None
         else:
-            realPart = self.x / (math.pow(self.x, 2) + math.pow(self.y, 2))
-            imagPart = -1 * self. y / (math.pow(self.x, 2) + math.pow(self.y, 2))
-            return ComplexT(realPart, imagPart)
+            real_part = self.x / (math.pow(self.x, 2) + math.pow(self.y, 2))
+            imag_part = -1 * self. y / (math.pow(self.x, 2) + math.pow(self.y, 2))
+            return ComplexT(real_part, imag_part)
 
-    def div(self, ComplexNo):
-        return self.mult(ComplexNo.recip())
-    #def div(self, ComplexNo):
+    def div(self, complex_no):
+        return self.mult(complex_no.recip())
         
     def sqrt(self):
         sign = 0.0
@@ -68,12 +67,12 @@ class ComplexT:
             sign = 1.0
         else:
             sign = 0.0
-        realPart = math.sqrt((self.x + self.get_r()) / 2)
-        imagPart = sign * math.sqrt(( -self.x + self.get_r()) / 2)
-        return ComplexT(realPart, imagPart)
+        real_part = math.sqrt((self.x + self.get_r()) / 2)
+        imag_part = sign * math.sqrt(( -self.x + self.get_r()) / 2)
+        return ComplexT(real_part, imag_part)
 
-##a = ComplexT(3.0, 3.0)
-##b = ComplexT(1.0, -1.0)
-##c = a.sqrt()
-##print(c.real())
-##print(c.imag())
+a = ComplexT(0.0, 0.0)
+b = ComplexT(1.0, -1.0)
+c = a.sqrt()
+print(c.real())
+print(c.imag())
