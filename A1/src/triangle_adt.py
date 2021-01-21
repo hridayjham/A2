@@ -4,6 +4,7 @@
 #  @date 
 
 import math
+from enum import Enum, auto
 
 class TriangleT:
     side1 = 0
@@ -40,7 +41,24 @@ class TriangleT:
         else :
             return False
 
+    def tri_type(self):
+        if self.side1 == self.side2 and self.side1 == self.side3:
+            return TriType.equilat
+        elif self.side1 == self.side2 or self.side1 == self.side3 or self.side2 == self.side3:
+            return TriType.isosceles
+        else:
+            sides_list = sorted(self.get_sides())
+            if (pow(sides_list[0], 2) + pow(sides_list[1], 2) == pow(sides_list[2], 2)):
+                return TriType.right
+            else :
+                return TriType.scalene
 
-a = TriangleT(1,2,3)
-b = TriangleT(4, 2, 1)
-print(a.is_valid())
+
+class TriType(Enum):
+    equilat = auto()
+    isosceles = auto()
+    scalene = auto()
+    right = auto()
+
+a = TriangleT(3, 5, 4)
+print(a.tri_type())
