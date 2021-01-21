@@ -137,3 +137,49 @@ if conj_test == True:
     print("conj test passes")
 else:
     print("conj test FAILS")
+
+a = ComplexT(5.0, -3.0)
+b = ComplexT(-3.5, 4.5)
+c = a.add(b)
+if c.equal(ComplexT(1.5, 1.5)) == False:
+    add_test = False
+
+a = ComplexT(-3.0, 0.0)
+b = ComplexT(-3.0, 45.0)
+c = a.add(b)
+if c.equal(ComplexT(-6.0, 45.0)) == False:
+    add_test = False
+
+a = ComplexT(1.0, 1.0)
+b = ComplexT(-1.0, -1.0)
+c = a.add(b)
+if c.equal(ComplexT(0.0, 0.0)) == False:
+    add_test = False
+
+if add_test == True:
+    print("add test passes")
+else:
+    print("add test FAILS")
+
+a = ComplexT(5.0, -3.0)
+b = ComplexT(-3.5, 4.5)
+c = a.sub(b)
+if c.equal(ComplexT(8.5, -7.5)) == False:
+    sub_test = False
+
+a = ComplexT(-3.0, 0.0)
+b = ComplexT(-3.0, 45.0)
+c = a.sub(b)
+if c.equal(ComplexT(0.0, -45.0)) == False:
+    sub_test = False
+
+a = ComplexT(1.0, 1.0)
+b = ComplexT(-1.0, -1.0)
+c = a.sub(b)
+if c.equal(ComplexT(2.0, 2.0)) == False:
+    sub_test = False
+
+if sub_test == True:
+    print("sub test passes")
+else:
+    print("sub test FAILS")
