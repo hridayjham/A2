@@ -37,7 +37,7 @@ class ComplexT:
             return False
     
     def conj(self):
-        return ComplexT(self.x, -1 * self.y)
+        return ComplexT(self.x, -self.y)
 
     def add(self, complex_no):
         return ComplexT(self.x + complex_no.x, self.y + complex_no.y)
@@ -71,8 +71,3 @@ class ComplexT:
         imag_part = sign * math.sqrt(( -self.x + self.get_r()) / 2)
         return ComplexT(real_part, imag_part)
 
-a = ComplexT(0.0, 0.0)
-b = ComplexT(1.0, -1.0)
-c = a.sqrt()
-print(c.real())
-print(c.imag())

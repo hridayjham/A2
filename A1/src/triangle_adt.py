@@ -59,6 +59,3 @@ class TriType(Enum):
     isosceles = auto()
     scalene = auto()
     right = auto()
-
-a = TriangleT(3, 5, 4)
-print(a.tri_type())
