@@ -1,7 +1,8 @@
 ## @file test_driver.py
-#  @author 
-#  @brief 
-#  @date 
+#  @author Hriday Jham
+#  @brief File containing tests for all functions implemented
+#  in ComplexT and TriangleT
+#  @date 01/21/2020
 
 import math
 from complex_adt import ComplexT
