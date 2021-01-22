@@ -36,7 +36,9 @@ class TriangleT:
         return area
 
     def is_valid(self) :
-        if (self.side1 + self.side2 > self.side3) and (self.side1 + self.side3 > self.side2) and (self.side2 + self.side3 > self.side1) :
+        if self.side1 <= 0 or self.side2 <= 0 or self.side3 <= 0:
+            return False
+        elif (self.side1 + self.side2 > self.side3) and (self.side1 + self.side3 > self.side2) and (self.side2 + self.side3 > self.side1) :
             return True
         else :
             return False

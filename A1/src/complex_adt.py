@@ -53,11 +53,14 @@ class ComplexT:
             return None
         else:
             real_part = self.x / (math.pow(self.x, 2) + math.pow(self.y, 2))
-            imag_part = -1 * self. y / (math.pow(self.x, 2) + math.pow(self.y, 2))
+            imag_part = -1 * self.y / (math.pow(self.x, 2) + math.pow(self.y, 2))
             return ComplexT(real_part, imag_part)
 
     def div(self, complex_no):
-        return self.mult(complex_no.recip())
+        if complex_no.equal(ComplexT(0.0, 0.0)):
+            return None
+        else:
+            return self.mult(complex_no.recip())
         
     def sqrt(self):
         sign = 0.0
@@ -66,7 +69,7 @@ class ComplexT:
         elif self.y > 0:
             sign = 1.0
         else:
-            sign = 0.0
+            sign = 1.0
         real_part = math.sqrt((self.x + self.get_r()) / 2)
         imag_part = sign * math.sqrt(( -self.x + self.get_r()) / 2)
         return ComplexT(real_part, imag_part)
