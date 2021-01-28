@@ -17,7 +17,7 @@
 \newcounter{stepnum}
 
 \title{Assignment 1 Solution}
-\author{Your Name and macid}
+\author{Hriday Jham, jhamh}
 \date{\today}
 
 \begin {document}
@@ -30,8 +30,31 @@ version of the two classes. The design restrictions for the assignment
 are critiqued and then various related discussion questions are answered.
 
 \section{Assumptions and Exceptions} \label{AssumptAndExcept}
+ComplexT:
 
+\begin{enumerate}
 
+\item I assumed that the real and imaginary parts would be represented in float numbers.  
+
+\item For get\_phi, since The phase of a complex number with both real and imaginary parts as 0 is undefined, I returned None if both real and imaginary parts of the complex are 0
+
+\item Since the reciprocal of 0 is undefined, I assumed the reciprocal of 0 complex number to be None in recip
+
+\item since any number when divided by 0 is undefined, I assumed the quotient of a division by 0 to be None in div
+
+\end{enumerate}
+
+TraingleT:
+
+\begin{enumerate}
+
+\item I assumed that the lengths of all three sides of the triangle would be represented by integers
+
+\item I assumed that a triangle is invalid if any of the sides is less than or equal to 0 in is\_valid
+
+\item I assumed that the triangle is invalid if the sum of any two sides is not greater than the third side in is\_valid
+
+\end{enumerate}
 \section{Test Cases and Rationale} \label{Testing}
 
 
