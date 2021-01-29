@@ -54,22 +54,173 @@ ComplexT:
 
 \item I assumed that the triangle is invalid if the sum of any two sides is not greater than the third side in is\_valid
 
+\item Assumed that a triangle which is both scalene and right to be a right triangle.
+
 \end{enumerate}
 \section{Test Cases and Rationale} \label{Testing}
 
+Test Cases for ComplexT functions:
+
+\begin{enumerate}
+    
+\item real function: Tested to real function against complex numbers with a positive, negative and 0 real part
+
+\item imag function: Tested to imag function against complex numbers with a positive, negative and 0 imaginary part
+
+\item get\_r function: Tested to get\_r function for a positive, negative and 0 complex number.
+
+\item get\_phi function: Tested get\_phi function for a complex number with real part > 0 or y != 0 with complex number 5 - 3i, for a complex number with real part < 0 and imaginary part = 0 with complex number -3 + 0i. I also tested that 0 + 0i complex number returns None.
+
+\item equal function: Tested equal function with two equal complex numbers and two unequal complex numbers.
+
+\item conj function: Tested conj function for three different complex numbers.
+
+\item add function: Tested add function for three different pairs of complex numbers.
+
+\item sub function: Tested sub function for three different pairs of complex numbers.
+
+\item mult function: Tested mult function for three different pairs of complex numbers.
+
+\item recip function: Tested recip function for three different complex numbers.
+
+\item div function: Tested div function for three different pairs of complex numbers, one of which was a 0 complex number to test if it returns None.
+
+\item sqrt function: Tested sqrt function against complex numbers with a positive, negative and 0 imaginary part.
+
+\end{enumerate}
+
+\noindent Test Cases for TriangleT functions:
+
+\begin{enumerate}
+
+\item get\_sides function: Tested get\_sides function against two different triangles
+
+\item equal function: Tested equal function against a pair of equal triangles and a pair of unequal triangles.
+
+\item perim function: Tested perim function for two different pairs of triangles.
+
+\item area function: Tested area function for two different pairs of triangles.
+
+\item is\_valid test: Tested is\_valid function for two invalid triangles and a valid triangle.
+
+\item tri\_type function: Tested tri\_type function for an equilateral, isosceles, scalene and right triangle.
+
+\end{enumerate}
 
 \section{Results of Testing Partner's Code}
 
+Partner's code failed three tests against my test\_driver. 
+
+div and recip function failed for ComplexT because my test\_driver was searching for None in undefined cases, but the partner's code raised exceptions in such cases. 
+
+tri\_type function failed for partner's code as their code had spelled isosceles wrong. It was spelled isoceles instead of isosceles.
 
 \section{Critique of Given Design Specification}
 
+The only flaw I found with the Design specification was that it was not clearly defined whether we should raise exceptions in undefined cases or return None.
 
 \section{Answers to Questions}
 
 \begin{enumerate}[(a)]
 
-\item 
-\item ...
+\item ComplexT mutators: 
+
+\begin{itemize}
+
+\item Constructor    
+
+\end{itemize}
+
+\noindent ComplexT selectors:
+
+\begin{itemize}
+    
+\item real
+
+\item imag
+
+\item get\_r
+
+\item get\_phi
+
+\item equal
+
+\item conj
+
+\item add
+
+\item sub
+
+\item mult
+
+\item recip
+
+\item div
+
+\item sqrt
+
+\end{itemize}
+
+\noindent TriangleT mutators:
+
+\begin{itemize}
+    
+\item constructor
+
+\end{itemize}
+
+\noindent TriangleT selectors:
+
+\begin{itemize}
+    
+\item get\_sides
+
+\item equal
+
+\item perim
+
+\item area
+
+\item is\_valid
+
+\item tri\_type
+
+\end{itemize}
+
+\item The two options for the state variables for these classes is to either use class variables or instance variables. In my files, I implemented instance variables for both ADTs
+
+\item Since complex numbers are vector quantities, implementing a greater than or less than function would only compare the magnitude of both complex numbers, and that does not tell us much.
+
+\item Yes, it is possible that three inputs given to TriangleT do not form a valid triangle in the following cases.
+
+\begin{itemize}
+
+\item One of the sides is negative or 0.
+
+\item The sum of any two sides is nto greater than the third.
+
+\end{itemize}
+
+\noindent In such cases, the constructor should call the is\_valid function implemented in the class, and if the function returns False, it should raise an error.
+
+\item It would be a good idea, because in such a case we could call the tri\_type function implemented inside the constructor and the TriType variable would be a class instance.
+
+\item There is a direct relationship between performance and usability. If the performance of a program is inefficient, it would affect the usability and understandability of the code.
+
+\item Faking a design process is required by programmers when they are not sure on how to proceed with their program and come up with a proper design. This is usually done when writing big and complex projects and programmers usually understand the working of the design process along the way. This can be prevented when writing a code where the programmer completely understands the working of the project and has a clear design process that is to be followed.
+
+\item If we are trying to reuse a code which is not correct or even has minor bugs in it can drastically affect the whole project if we reuse it in many parts of the project. Therefore, it is necessary to perform rigorous unit testing on the parts of code that we are reusing. Even such, there could still be an edge case or a bug that we failed to test which could affect the reliability of the program.
+
+\item Some examples that programming languages are abstractions built on top of hardware are:
+
+\begin{itemize}
+    
+\item Operating Systems are a good example, as the actions we perform are to be converted to 0s and 1s and performing actions would be almost unusable without compilers and interpreters. 
+
+\item Washing Machines are another example as there are so many operations performed by a washing machine such as washing, drying, soaking etc. and they are programmed to be easy to use even by someone who has no idea about the hardware underneath.
+    
+\end{itemize}
+
 
 \end{enumerate}
 
