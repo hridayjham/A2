@@ -3,7 +3,9 @@
 #  @brief
 #  @date
 
-class TriangleT:
+from Shape import Shape
+
+class TriangleT(Shape):
     
     def __init__(self, x, y, s, m):
         if s > 0 and m > 0:
