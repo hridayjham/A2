@@ -6,7 +6,7 @@
 
 
 from Shape import Shape
-from scipy import *
+from scipy.integrate import odeint
 
 
 class Scene:
@@ -36,21 +36,17 @@ class Scene:
         
     def set_init_velo(self, vx, vy):
         self.vx = vx
-        self.vy = vy
-        
-        
-    def __ode(self, w, t):
-        t = [w[2], w[3], self.s.Fx(t)/self.s.mass(), self.s.Fy(t)/self.s.mass]   
+        self.vy = vy   
     
-    
+    def ode(self, w, t):
+        t = [w[2], w[3], self.Fx(t)/self.s.mass(), self.Fy(t)/self.s.mass()]
+        
     def sim(self, tfinal, nsteps):
         t = []
         for i in range(nsteps):
-            t.append(i.tfinal/(nsteps - 1))
+            t.append(i*tfinal/(nsteps - 1))
             
         return t, odeint(self.ode, [self.s.cm_x(), self.s.cm_y(), self.vx, self.vy], t)
         
-    
-    
-        
+
     
