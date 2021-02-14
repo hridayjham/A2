@@ -21,7 +21,7 @@ def __sum(m):
 def __mmom(x, y, m):
     temp = 0
     for i in range(len(m)):
-        temp += m[i]*((math.pow(x[i], 2) + math.pow(y[i], 2))
+        temp += m[i]*(math.pow(x[i], 2)+ math.pow(y[i], 2))
     return temp
 
 
@@ -36,7 +36,7 @@ class BodyT(Shape):
             self.cmx = self.cm(x, m)
             self.cmy = self.cm(y, m)
             self.m = self.sum(m)
-            self.moment = mmom(x, y, m) - sum(m)*((math.pow(cm(x, m), 2)) + (math.pow(cm(y, m), 2)))
+            self.moment = mmom(x, y, m) - sum(m)*(math.pow(cm(x, m), 2) + math.pow(cm(y, m), 2))
             
             
     def cm_x(self):
