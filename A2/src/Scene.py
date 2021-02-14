@@ -40,7 +40,7 @@ class Scene:
         
         
     def __ode(self, w, t):
-        t = [w[2], w[3], self.Fx(t)/self.mass(), self.Fy(t)/self.mass]   
+        t = [w[2], w[3], self.s.Fx(t)/self.s.mass(), self.s.Fy(t)/self.s.mass]   
     
     
     def sim(self, tfinal, nsteps):
@@ -48,7 +48,7 @@ class Scene:
         for i in range(nsteps):
             t.append(i.tfinal/(nsteps - 1))
             
-        return t, odeint(self.ode, self.cm_x(), )
+        return t, odeint(self.ode, [self.s.cm_x(), self.s.cm_y(), self.vx, self.vy], t)
         
     
     
