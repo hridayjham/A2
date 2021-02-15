@@ -21,7 +21,7 @@ def mmom(x, y, m):
 class BodyT(Shape):
     
     def __init__(self,x, y, m ):
-        if ((len(x) ==len(y)) == False) or ((len(y) == len(m)) == False):
+        if ((len(x) == len(y) and len (y) == len(m)) == False):
             raise ValueError("Lengths of inputs are invalid")
         elif sum(m) <= 0 :
             raise ValueError("Invalid input for m")

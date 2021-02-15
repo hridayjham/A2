@@ -12,14 +12,13 @@ def plot(w, t):
     else:
         x = []
         y = []
-        for i in w:
+        for i in range (len(w)):
             x.append(w[i][0])
             y.append(w[i][1])
             
-        a = plt.plot(x, t)
-        a.show()
-        b = plt.plot(y, t)
-        b.show()
-        c = plt.plot(y, x)
-        
+        fig, axs = plt.subplots(3)
+        fig.suptitle('Vertically stacked subplots')
+        axs[0].plot(t, x)
+        axs[1].plot(t, y)
+        axs[2].plot(x, y)
         plt.show()

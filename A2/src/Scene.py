@@ -40,6 +40,7 @@ class Scene:
     
     def ode(self, w, t):
         t = [w[2], w[3], self.Fx(t)/self.s.mass(), self.Fy(t)/self.s.mass()]
+        return t
         
     def sim(self, tfinal, nsteps):
         t = []
