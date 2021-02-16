@@ -5,7 +5,6 @@
 #  @details
 
 
-from Shape import Shape
 from scipy.integrate import odeint
 
 
@@ -38,7 +37,7 @@ class Scene:
         self.vx = vx
         self.vy = vy
 
-    def ode(self, w, t):
+    def __ode(self, w, t):
         t = [w[2], w[3], self.Fx(t) / self.s.mass(), self.Fy(t) / self.s.mass()]
         return t
 
@@ -47,4 +46,4 @@ class Scene:
         for i in range(nsteps):
             t.append(i * tfinal / (nsteps - 1))
 
-        return t, odeint(self.ode, [self.s.cm_x(), self.s.cm_y(), self.vx, self.vy], t)
+        return t, odeint(self.__ode, [self.s.cm_x(), self.s.cm_y(), self.vx, self.vy], t)
