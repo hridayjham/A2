@@ -1,6 +1,6 @@
 ## @file CircleT.py
 #  @author Hriday Jham
-#  @brief Contains the CircleT type to represent Circles
+#  @brief Contains the CircleT type to represent a Circle
 #  @date 02/16/2021
 
 from Shape import Shape
