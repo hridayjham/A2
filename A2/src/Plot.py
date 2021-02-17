@@ -1,12 +1,16 @@
-## @file
-#  @author
-#  @brief
-#  @date
-#  @details
+## @file Plot.py
+#  @author Hriday Jham
+#  @brief A function plot which plots the x-t, y-t and x-y
+#  graphs.
+#  @date 02/16/2021
+#  @details plot uses mathplotlib library to plot the three graphs.
 
 import matplotlib.pyplot as plt
 
 
+## @brief function plot plots the x-t, y-t and x-y graphs
+#  @param w a nested sequence with the inner sequences of length 4
+#  @param t a sequence of real numbers.
 def plot(w, t):
     if len(w) != len(t):
         raise ValueError("Invalid Inputs for plot")
