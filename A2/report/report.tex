@@ -19,31 +19,137 @@
 \newcounter{stepnum}
 
 \title{Assignment 2 Solution}
-\author{Your Name}
+\author{Hriday Jham, jhamh (400227516)}
 \date{\today}
 
 \begin {document}
 
 \maketitle
 
-This report discusses the testing phase for .... It also discusses the results
+This report discusses the testing phase for CircleT, TriangleT, BodyT and Scene classes implemented for Assignment 2. It also discusses the results
 of running the same tests on the partner files. The assignment specifications
 are then critiqued and the requested discussion questions are answered.
 
 \section{Testing of the Original Program}
 
+CircleT:
+\begin{enumerate}
+    \item Tested the exceptions $r > 0 \land m > 0$ for the constructor
+    
+    \item Did one test on cm\_x function
+    
+    \item Did one test on cm\_y function
+    
+    \item performed one test on mass function
+    
+    \item performed one test on m\_inert function\\
+    
+\end{enumerate}
 
+\noindent TriangleT:
+\begin{enumerate}
+    \item Tested the exceptions $s > 0 \land m > 0$ for the constructor
+    
+    \item Did one test on cm\_x function
+    
+    \item Did one test on cm\_y function
+    
+    \item performed one test on mass function
+    
+    \item performed one test on m\_inert function\\
+    
+\end{enumerate}
+
+\noindent BodyT:
+\begin{enumerate}
+    \item Tested the exception x, y, m have same lengths
+    
+    \item Tested the exception m cannot have a value $\le 0$
+    
+    \item Did one test on cm\_x function
+    
+    \item Did one test on cm\_y function
+    
+    \item performed one test on mass function
+    
+    \item performed one test on m\_inert function\\
+    
+\end{enumerate}
+
+\noindent Scene:
+\begin{enumerate}
+    \item Implemented a basic Fx function and an Fy function where the work is being done against gravity
+    
+    \item Did one test on get\_shape function
+    
+    \item Did one test on get\_init\_velo function
+    
+    \item changed the shape of the Scene to test set\_shape function
+    
+    \item changed the initial velocities of the Scene to test set\_shape function
+    
+    \item Since the output of sim function is a sequence of real numbers, used a relative error formula to calculate $x_{calc}$ and $x_{true}$
+    
+    \item performed one test on sim function\\
+    
+\end{enumerate}
+
+\noindent Results of testing my code:\\
+
+On testing my code against the test\_driver, the code passed all 20 cases.
 \section{Results of Testing Partner's Code}
+Number of test cases: 20\\
 
+\noindent Number of passed test cases: 20\\
+
+\noindent On testing my partner's code against my test\_driver, his code passed all tests for all classes. This shows that he kept in mind all exceptions while implementing the code and also was able to formulate the desired output for all functions.\\
+
+\noindent I did however feel like the doxygen briefs for the partner's code could have been a little more in detail.
 
 \section{Critique of Given Design Specification}
 
+This assignment was better explained than the last one, as it clearly mentioned where to raise a ValueError and what exceptions to follow. I found it very easy to read and every part of the assignment was well explained.\\
+
+\noindent I do however feel as if Plot.py could have been explained in a little more detail than was given in the assignment.
 
 \section{Answers}
 
 \begin{enumerate}[a)]
 
-\item
+\item No I do not think getters and setters should be unit tested unlesss they have a complex code which could result in errors.
+
+\item If we were to unit test the getters and setters for Fx and Fy, since both are functions which take a real number as a parameter and return a real number, I would run the Fx and Fy on some arbitrary real number and test them against the desired output of the function.
+
+\item If automated tests were required for plot.py, then instead of plotting them and comparung the graphs manually, I would generate a file holding all values that have been plotted and compare them to the desired values of the true graph.
+
+\item listcheck : seq of $\mathbb{R}$ X seq of $\mathbb{R}$ $->$ Bool
+
+\noindent $listcheck(x_{calc}, x_{true}) = (\land i : \mathbb{N}|i \in [0..|x_{calc}|-1] : (x_{calc}_i- x_{true}_i)/x_{true}_i > \epsilon)$
+
+\item There should not be any exceptions for x and y being negative as the coordinates of centre of mass can be negative.
+
+\item To prove $s > 0 \land m > 0$, we first prove $s > 0$. We know that s represents the sides of a triangle. The side of a triangle has to have some length, otherwise the triangle ceases to exist. Thus, s will always be greater than 0.\\
+
+\noindent We know that m represents the mass of a triangle. We know that any object that exists in space has to have some mass. Thus, m will always be grater than 0.
+
+\item \begin{lstlisting}[language=Python]
+L = [math.sqrt(x) for x in range (5, 20)]
+\end{lstlisting}
+
+\item \begin{lstlisting}[language=Python]
+def No_Uppercase(L):
+    x = []
+    for i in L:
+        x.append(i)
+    for i in x:
+        if isupper(i):
+            x.remove(i)
+    return x
+\end{lstlisting}
+
+\item Generality, being the principle of writing generalised code for reusability is closely related to abstraction which is the hiding of information that is not relevant to the user. Having generalised code can easily help with abstraction as the generalised code can easily be called without having to reveal unnecessary information to the user.
+
+\item The scenario where a module is used by many other modules will be better because in high coupling situations, it would avoid confusion and through abstraction, it would make readability of code better.
 
 \end{enumerate}
 
@@ -122,3 +228,4 @@ are then critiqued and the requested discussion questions are answered.
 \newpage
 
 \end {document}
+
