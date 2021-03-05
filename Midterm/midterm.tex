@@ -140,15 +140,28 @@ documentation, and/or Parnas's principles.
 \begin{enumerate}[a)]
 \item Abstraction
   \begin{itemize}
-  \item
-  \item
-  \item
+  \item Since Abstraction is the principle of focusing on what is important and ignoring the irrelevant, it is implemented while faking
+  a rational design process as we are focusing at one part of the software design process at a time and only focusing on what is important
+  for that part of the design process.
+
+  \item In a rational design process, we postpone details until implementation which is a principle of abstraction as stated by parnas.
+
+  \item While working on a design, we implement only the parts we understand and are the components required for the document to give the 
+  desired output while constantly understanding and fixing what we didn't understand when we started. This further enforces the implementation
+  of only the important details while leaving irrelevant details out.
+
   \end{itemize}
 \item Separation of Concerns
   \begin{itemize}
-  \item
-  \item
-  \item
+  \item Seperation of concerns is the principle that different concerns should be isolated and considered seperately. The goal is to reduce
+  complex problems into simpler problems, which is exactly what we do while implementing a rational design process. We start with the required
+  document, then we design a solution,implement the code and finally test and verify the code.
+
+  \item Seperation of concerns enables parallelization. In rational design, we do not fully understand the problem at first and work through
+  the software while constantly reverting back to previous stages and fixing errors, thus using parallelization
+
+  \item By implementing abstraction, we implement seperation of concerns as Abstraction is a special case of seperation of concerns.
+  
   \end{itemize}
 \end{enumerate}
 
