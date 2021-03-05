@@ -9,7 +9,7 @@ def max_val(s):
     if len(s) == 0:
         raise ValueError("Invalid Length of input")
     else :
-        maximum = 0
+        maximum = -1
         for i in range(len(s)):
             if abs(s[i]) > abs(maximum):
                 maximum = s[i]
