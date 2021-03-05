@@ -30,8 +30,12 @@ class SetOfInt:
         t_list = t.to_seq()
         new_list = []
         for i in self_list:
-            if i in t_list == False:
+            if i not in t_list:
                 new_list.append(i)
+        for x in t_list:
+            if x not in self_list:
+                new_list.append(x)
+        print(new_list)
         return SetOfInt(new_list)
     
     def size(self):
