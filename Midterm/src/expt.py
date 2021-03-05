@@ -7,12 +7,12 @@ from SeqServicesLibrary import *
 from SetOfInt import *
 
 # Exercising Sequence Services Library
-#print()
-#print("SeqServicesLibrary, max_val expt:", max_val([1, 2, -3]))
-#print("SeqServicesLibrary, count expt:", count(1, [1, 1, 1, 1]))
-#print("SeqServicesLibrary, spices expt:", spices([-5, 0, 23]))
-#print("SeqServicesLibrary, new_max_val expt:", new_max_val([-5, 0, 23], lambda x: x >10))
-#print()
+print()
+print("SeqServicesLibrary, max_val expt:", max_val([1, 2, -3]))
+print("SeqServicesLibrary, count expt:", count(1, [1, 1, 1, 1]))
+print("SeqServicesLibrary, spices expt:", spices([-5, 0, 23]))
+print("SeqServicesLibrary, new_max_val expt:", new_max_val([-5, 0, 23], lambda x: x >10))
+print()
 
 # Exercising Set of Integers
 #xs = [-9, 6, 23, 21, -5]
