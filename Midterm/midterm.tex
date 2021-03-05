@@ -59,9 +59,9 @@ MCMASTER UNIVERSITY MIDTERM EXAMINATION \hfill March 4, 2021
 
 %\begin{minipage}[t]{1.0\textwidth}
 
-NAME: \wss{Enter your name here}\\[1ex]
+NAME: \wss{Hriday Jham}\\[1ex]
 
-Student ID: \wss{Enter your student number here} \\[2mm]
+Student ID: \wss{400227516} \\[2mm]
 
 \noindent
 \rule[3 mm]{\textwidth}{0.5mm}
@@ -146,7 +146,7 @@ documentation, and/or Parnas's principles.
 
   \item In a rational design process, we postpone details until implementation which is a principle of abstraction as stated by parnas.
 
-  \item While working on a design, we implement only the parts we understand and are the components required for the document to give the 
+  \item While working on a design, we implement only the parts we understand and those that are the components required for the document to give the 
   desired output while constantly understanding and fixing what we didn't understand when we started. This further enforces the implementation
   of only the important details while leaving irrelevant details out.
 
@@ -482,9 +482,8 @@ and minimality.  Please be specific in your answer.
 \wss{Put your answer for each quality below.}
 
 \begin{itemize}
-\item \textbf{consistency}:
-The SetOfInt module is not consistent because it does not follow uniform name conventions. For example, if the Boolean functions were being named is_member, then empty and equals 
-shouldve been named is_empty and is_equals.
+\item \textbf{consistency}: The SetOfInt module is not consistent because it does not follow uniform name conventions. For example, if the Boolean functions were 
+being named is\_member, then empty and equals shouldve been named is\_empty and is\_equals.
 \item \textbf{essentiality}:
 SetOfInt is not essential as empty is being reproduced by using size. Both of these methods were not necessary as having one wouldve sufficed.
 \item \textbf{generality}:
@@ -522,10 +521,11 @@ characterize the changes; you don't actually have to make them.)
 \wss{Put your answer below.}
 
 \begin{enumerate}[a.]
-\item
-\item
-\item
-\item (BONUS)
+\item To change the specification of SetOfInt and make it generic, instead of taking sequences of $\mathbb{Z}$ as input, I would take
+sequences of T for the methods where T is a generic Data Type. Also I would rename the template module and name it SetOfInt
+\item Since python does not require dynamic typing, and is already a generic language, I would simply rename SetOfInt to SetOfT.
+\item the \_\_eq\_\_ (equal) relational operator must be defined for type T to be valid.
+\item (BONUS) T must satisfy \_\_eq\_\_
 \end{enumerate}
 
 \end{minipage}
