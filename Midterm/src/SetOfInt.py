@@ -35,7 +35,6 @@ class SetOfInt:
         for x in t_list:
             if x not in self_list:
                 new_list.append(x)
-        print(new_list)
         return SetOfInt(new_list)
     
     def size(self):
