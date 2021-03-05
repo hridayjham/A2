@@ -161,7 +161,7 @@ documentation, and/or Parnas's principles.
   the software while constantly reverting back to previous stages and fixing errors, thus using parallelization
 
   \item By implementing abstraction, we implement seperation of concerns as Abstraction is a special case of seperation of concerns.
-  
+
   \end{itemize}
 \end{enumerate}
 
@@ -483,9 +483,15 @@ and minimality.  Please be specific in your answer.
 
 \begin{itemize}
 \item \textbf{consistency}:
+The SetOfInt module is not consistent because it does not follow uniform name conventions. For example, if the Boolean functions were being named is_member, then empty and equals 
+shouldve been named is_empty and is_equals.
 \item \textbf{essentiality}:
+SetOfInt is not essential as empty is being reproduced by using size. Both of these methods were not necessary as having one wouldve sufficed.
 \item \textbf{generality}:
+The module is general as it is only specific to integers and not generic. It cannot be used in multiple situations for different purposes.
 \item \textbf{minimality}:
+It is not minimal as the method diff is calculating the complement as well as the disjunction of the set with the complement. Thus the method
+diff does two jobs instead of one.
 \end{itemize}
 
 \end{minipage}
